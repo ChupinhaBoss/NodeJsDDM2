@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../assets/css/styles';
 import { 
 StyleSheet, 
 Text, 
@@ -7,7 +6,7 @@ View,
 TextInput, 
 Pressable, 
 Image } from 'react-native';
-
+import styles from '../assets/css/stylesMegas';
 export default function App() {
   const [name, setName] = React.useState('');
   const [imagem, setImagem] = React.useState(require('../assets/allmegas.jpg'));
