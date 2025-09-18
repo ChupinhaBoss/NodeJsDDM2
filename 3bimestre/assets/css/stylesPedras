@@ -1,0 +1,80 @@
+// styles.js
+import { StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#351b6e',
+    padding: 10,
+  },
+  titulo: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 12,
+    textAlign: 'center',
+    color: '#f7f9fc',
+  },
+  card: {
+    flexDirection: 'row',
+    backgroundColor: '#66418c',
+    borderRadius: 12,
+    padding: 10,
+    marginVertical: 8,
+    alignItems: 'center',
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 1 },
+    shadowRadius: 2,
+  },
+  img: {
+    width: 80,
+    height: 80,
+    borderRadius: 8,
+  },
+  imgItem: {
+    width: 250,
+    height: 250,
+    borderRadius: 25,
+    marginVertical: 20,
+  },
+  info: {
+    flex: 1,
+  },
+  nome: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 4,
+    color: '#FFF',
+  },
+  // Modal
+  modalBackground: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    width: '80%',
+    backgroundColor: '#fff',
+    padding: 25,
+    borderRadius: 12,
+    alignItems: 'center',
+  },
+  modalTitulo2: {
+    fontSize: 40,
+    fontWeight: 'bold',
+  },
+  botaoFechar: {
+    backgroundColor: '#bf0814',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
+  },
+  botaoFecharTexto: {
+    color: '#fff',
+    fontSize: 16,
+  },
+});
+
+export default styles;
