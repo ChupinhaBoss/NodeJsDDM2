@@ -11,6 +11,7 @@ import {
   Pressable,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styles from '../assets/css/stylesPedras';
 
 const produtos = [
   { id: '1', nome: 'Mega Charizard X', imgPedra: require('../assets/pedras/charizarditex.png'), imgMega: require('../assets/charx.jpg') },
@@ -52,28 +53,27 @@ export default function Produto() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.titulo}>TOP 10 MELHORES PERSONAGENS</Text>
+      <Text style={styles.titulo}>Mega Pedras</Text>
       <FlatList
         data={produtos}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.card}>
-            <Image source={item.img} style={styles.img} />
+            <Image source={item.imgPedra} style={styles.img} />
             <View style={styles.info}>
               <Text style={styles.nome}>{item.nome}</Text>
-              <Text style={styles.ranking}>{item.ranking}</Text>
             </View>
             <Button
-              title="Detalhes"
+              title="Pokémon"
               onPress={() => abrirModal(item)}
-              color="#bf0814"
+              color="#eb7515"
             />
           </View>
         )}
       />
       <Button title="Voltar" 
       onPress={() => navigation.goBack()} 
-      color="#8f000a"
+      color="#eb7515"
       />
 
       {/* Modal */}
@@ -87,13 +87,9 @@ export default function Produto() {
           <View style={styles.modalContent}>
             {itemSelecionado && (
               <>
-                <Image source={itemSelecionado.img} style={styles.img} />
+                <Image source={itemSelecionado.imgPedra} style={styles.img} />
                 <Text style={styles.modalTitulo2}>{itemSelecionado.nome}</Text>
-                <Text style={styles.modalRanking}>{itemSelecionado.ranking}</Text>
-                <Text style={styles.modalTitulo}>Status:</Text>
-                <Image source={itemSelecionado.imgStatus} style={styles.imgStatus} />
-                <Text style={styles.modalTitulo}>Item:</Text>
-                <Image source={itemSelecionado.imgItem} style={styles.imgItem} />
+                <Image source={itemSelecionado.imgMega} style={styles.imgItem} />
               </>
             )}
             <Pressable style={styles.botaoFechar} onPress={fecharModal}>
@@ -105,98 +101,3 @@ export default function Produto() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#0f172a',
-    padding: 10,
-  },
-  titulo: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 12,
-    textAlign: 'center',
-    color: '#f7f9fc',
-  },
-  card: {
-    flexDirection: 'row',
-    backgroundColor: '#21355e',
-    borderRadius: 12,
-    padding: 10,
-    marginVertical: 8,
-    alignItems: 'center',
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowOffset: { width: 0, height: 1 },
-    shadowRadius: 2,
-  },
-  img: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-  },
-  imgItem: {
-    width: 165,
-    height: 200,
-    borderRadius: 25,
-    marginVertical: 20,
-  },
-  imgStatus: {
-    width: 300,
-    height: 400,
-    borderRadius: 15,
-    marginVertical: 20,
-  },
-  info: {
-    flex: 1,
-  },
-  nome: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 4,
-    color: '#FFF',
-  },
-  ranking: {
-    fontSize: 14,
-    color: '#9FF',
-  },
-  // Modal
-  modalBackground: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalContent: {
-    width: '80%',
-    backgroundColor: '#fff',
-    padding: 25,
-    borderRadius: 12,
-    alignItems: 'center',
-  },
-  modalTitulo: {
-    fontSize: 22,
-    fontWeight: 'bold',
-  },
-  modalTitulo2: {
-    fontSize: 40,
-    fontWeight: 'bold',
-  },
-  modalRanking: {
-    fontSize: 16,
-    color: '#666',
-    marginBottom: 25,
-  },
-  botaoFechar: {
-    backgroundColor: '#bf0814',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-  botaoFecharTexto: {
-    color: '#fff',
-    fontSize: 16,
-  },
-});
