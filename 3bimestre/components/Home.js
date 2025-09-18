@@ -7,6 +7,7 @@ import {
   Image
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import styles from '../assets/css/stylesHome';
 
 
 export default function Home() {
@@ -34,29 +35,3 @@ export default function Home() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-  flex: 1,
-  backgroundColor: '#351b6e',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: 50,
-},
-titulo: {
-  fontSize: 45,
-  fontWeight: 'bold',
-  marginBottom: 20,
-  marginStart: 15,
-  color: '#eb7515',
-},
-botaoContainer: {
-    width: '80%',
-    marginVertical: 10,
-},
-image: {
-  width: '200px',
-  height: '200px'
-}
-
-});
